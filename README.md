@@ -1,2 +1,2 @@
-# richcontent_rossman
-shellscript for creating files richocntent - rosmann development
+# richcontent_rossmann
+shellscript for creating files structure for richcontent for rossmann page.
