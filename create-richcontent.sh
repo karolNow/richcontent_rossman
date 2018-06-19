@@ -1,39 +1,39 @@
 now="$(date +'%Y-%m-%d-')"
-echo "Cześć program słuzy do tworzenia struktury plików rich-content"
-echo -n "Podaj nazwę folderu "
-read nazwa
-echo "Tworze plik o nazwie : $nazwa"
+echo "Hi this little code help creates file structure for rich-content module development for Rossman pages. It installs, npm, Sass, Gulp and also creates basic .html .gulpfile.js and sass structure."
+echo -n "Write name of project"
+read name
+echo "I'm creating: $name"
 
 
 #stwórz folder scr i test
-mkdir -p $nazwa/$now$nazwa/$nazwa-test/src/{js,sass,img}
-cat >  $nazwa/$now$nazwa/$nazwa-test/src/index.html <<EOF
-<!-- $nazwa - Richcontent START -->
+mkdir -p $name/$now$name/$name-test/src/{js,sass,img}
+cat >  $name/$now$name/$name-test/src/index.html <<EOF
+<!-- $name - Richcontent START -->
 
 <p>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
-  <link rel="stylesheet" href="Portals/0/rich-content/$nazwa/css/styles.css">
+  <link rel="stylesheet" href="Portals/0/rich-content/$name/css/styles.css">
 </p>
 
-  <div class="gordo-rc-$nazwa container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="rc-$name container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
     <!-- HEADER -->
-    <section class="gordo-rc-$nazwa-header row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="gordo-rc-$nazwa-logo row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$nazwa/img/..." alt="$nazwa-logo">
+    <section class="rc-$name-header row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="rc-$name-logo row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="Portals/0/rich-content/$name/img/..." alt="$name-logo">
       </div>
-      <div class="gordo-rc-$nazwa-heroimg row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$nazwa/img/..." alt="$nazwa-second-logo">
+      <div class="rc-$name-heroimg row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="Portals/0/rich-content/$name/img/..." alt="$name-second-logo">
       </div>
-      <div class="gordo-rc-$nazwa-products row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <img src="Portals/0/rich-content/$nazwa/img/..." alt="$nazwa-all-products">
+      <div class="rc-$name-products row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <img src="Portals/0/rich-content/$name/img/..." alt="$name-all-products">
         <h2></h2>
         <p></p>
       </div>
-      <div class="gordo-rc-$nazwa-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="rc-$name-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h3></h3>
         <p></p>
-        <img src="Portals/0/rich-content/$nazwa/img/..." alt="$nazwa-im-products">
+        <img src="Portals/0/rich-content/$name/img/..." alt="$name-im-products">
         <p></p>
         <ul>
           <li><p></p></li>
@@ -45,19 +45,19 @@ cat >  $nazwa/$now$nazwa/$nazwa-test/src/index.html <<EOF
 
     <!-- PRODUKTS-LIST -->
 
-    <section class="gordo-rc-$nazwa-product-list row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <section class="rc-$name-product-list row col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <!-- PRODUKT 1 -->
-      <div class="gordo-rc-$nazwa-product01 row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div class="gordo-rc-$nazwa-packshoot-hero row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+      <div class="rc-$name-product01 row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div class="rc-$name-packshoot-hero row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+          <img src="Portals/0/rich-content/$name/img/..." alt="">
         </div>
-        <div class="gordo-rc-$nazwa-packshoot row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+        <div class="rc-$name-packshoot row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+          <img src="Portals/0/rich-content/$name/img/..." alt="">
         </div>
-        <div class="gordo-rc-$nazwa-button row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div class="rc-$name-button row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
           <a href="#"></a>
         </div>
-        <div class="gordo-rc-$nazwa-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="rc-$name-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h3></h3>
           <p></p>
           <ul>
@@ -67,55 +67,55 @@ cat >  $nazwa/$now$nazwa/$nazwa-test/src/index.html <<EOF
       </div>
 
       <!-- PRODUKTS-LIST-TEKST -->
-      <div class="gordo-rc-$nazwa-pl-text row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <div class="rc-$name-pl-text row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         <p></p>
       </div>
 
     </section>
 
     <!-- FOOTER -->
-    <section class="gordo-rc-$nazwa-footer row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-      <div class="gordo-rc-$nazwa-footer-hero-img row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+    <section class="rc-$name-footer row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <div class="rc-$name-footer-hero-img row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="Portals/0/rich-content/$name/img/..." alt="">
       </div>
-      <div class="gordo-rc-$nazwa-footer-hero-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="rc-$name-footer-hero-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2><span></span></h2>
       </div>
 
       <!-- footer-produkty -->
-      <div class="gordo-rc-$nazwa-footer-hero-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="rc-$name-footer-hero-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <!-- f-produkt-01 -->
-        <div class="gordo-rc-$nazwa-f-product-01 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="rc-$name-f-product-01 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h3></h3>
           <p></p>
-          <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+          <img src="Portals/0/rich-content/$name/img/..." alt="">
         </div>
         <!-- f-produkt-02 -->
-        <div class="gordo-rc-$nazwa-f-product-02 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="rc-$name-f-product-02 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h3></h3>
           <p></p>
-          <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+          <img src="Portals/0/rich-content/$name/img/..." alt="">
         </div>
         <!-- f-produkt-03 -->
-        <div class="gordo-rc-$nazwa-f-product-03 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="rc-$name-f-product-03 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h3></h3>
           <p></p>
-          <img src="Portals/0/rich-content/$nazwa/img/..." alt="">
+          <img src="Portals/0/rich-content/$name/img/..." alt="">
         </div>
 
       </div>
     </section>
   </div>
 
-<!-- $nazwa - Richcontent END -->
+<!-- $name - Richcontent END -->
 EOF
 
 #Sass i podfoldery sassa
-mkdir -p $nazwa/$now$nazwa/$nazwa-test/src/sass/components/{body,mobile,small,medium,large} | touch $nazwa/$now$nazwa/$nazwa-test/src/sass/components/{body,mobile,small,medium,large}/{animations,video,shapes,buttons,fonts,header,product,products,footer,footer-products}.scss
-mkdir -p $nazwa/$now$nazwa/$nazwa-test/src/sass/media | touch $nazwa/$now$nazwa/$nazwa-test/src/sass/media/{mobile,small,medium,large}.scss
-mkdir -p $nazwa/$now$nazwa/$nazwa-test/src/sass/main | touch $nazwa/$now$nazwa/$nazwa-test/src/sass/main/{variables,mixins,body}.scss
+mkdir -p $name/$now$name/$name-test/src/sass/components/{body,mobile,small,medium,large} | touch $name/$now$name/$name-test/src/sass/components/{body,mobile,small,medium,large}/{animations,video,shapes,buttons,fonts,header,product,products,footer,footer-products}.scss
+mkdir -p $name/$now$name/$name-test/src/sass/media | touch $name/$now$name/$name-test/src/sass/media/{mobile,small,medium,large}.scss
+mkdir -p $name/$now$name/$name-test/src/sass/main | touch $name/$now$name/$name-test/src/sass/main/{variables,mixins,body}.scss
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/main/body.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/fonts.scss";
 @import "src/sass/components/body/animations.scss";
 @import "src/sass/components/body/buttons.scss";
@@ -128,7 +128,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/footer.scss";
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/large.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/media/large.scss <<\EOF
 @include large{
 @import "src/sass/components/large/fonts.scss";
 @import "src/sass/components/large/animations.scss";
@@ -143,7 +143,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/large.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/medium.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/media/medium.scss <<\EOF
 @include medium{
 @import "src/sass/components/medium/fonts.scss";
 @import "src/sass/components/medium/animations.scss";
@@ -158,7 +158,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/medium.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/small.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/media/small.scss <<\EOF
 @include small{
 @import "src/sass/components/small/fonts.scss";
 @import "src/sass/components/small/animations.scss";
@@ -173,7 +173,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/small.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/mobile.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/media/mobile.scss <<\EOF
 @include mobile{
 @import "src/sass/components/mobile/fonts.scss";
 @import "src/sass/components/mobile/animations.scss";
@@ -188,7 +188,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/media/mobile.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/main/variables.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/main/variables.scss <<\EOF
 $kolor0: #000;
 $kolor1: green;
 $kolor2: red;
@@ -235,7 +235,7 @@ $lg-li :16px;
 
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/main/mixins.scss <<\EOF
+cat > $name/$now$name/$name-test/src/sass/main/mixins.scss <<\EOF
 @mixin text-reset(){
   margin-left: 0px;
   margin-right: 0px;
@@ -270,7 +270,7 @@ cat > $nazwa/$now$nazwa/$nazwa-test/src/sass/main/mixins.scss <<\EOF
 EOF
 
 
-cat >  $nazwa/$now$nazwa/$nazwa-test/src/sass/styles.scss <<\EOF
+cat >  $name/$now$name/$name-test/src/sass/styles.scss <<\EOF
 @import "main/variables.scss";
 @import "main/mixins.scss";
 @import "main/body.scss";
@@ -284,12 +284,12 @@ EOF
 
 
 #pozostałe foldery
-mkdir -p $nazwa/$now$nazwa/$nazwa-rossmann
-mkdir -p $nazwa/$now$nazwa/$nazwa-materiały
-mkdir -p $nazwa/$now$nazwa/$nazwa-wydane
+mkdir -p $name/$now$name/$name-rossmann
+mkdir -p $name/$now$name/$name-materiały
+mkdir -p $name/$now$name/$name-wydane
 
 #stwórz plik gulpa
-cat > $nazwa/$now$nazwa/$nazwa-test/gulpfile.js <<EOF
+cat > $name/$now$name/$name-test/gulpfile.js <<EOF
 
 var gulp = require('gulp');
 var directories = require('gulp')
@@ -301,26 +301,26 @@ const imagemin = require('gulp-imagemin');
 gulp.task('imagemin', function(){
     gulp.src('src/img/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('Portals/0/rich-content/$nazwa/img'))
-        .pipe(gulp.dest('../smectaGo-rossmann/Portals/0/rich-content/$nazwa/img'))
+        .pipe(gulp.dest('Portals/0/rich-content/$name/img'))
+        .pipe(gulp.dest('../smectaGo-rossmann/Portals/0/rich-content/$name/img'))
       });
 
 gulp.task('copyHtml', function(){
   gulp.src('src/*.html')
-  .pipe(gulp.dest('../$nazwa-rossmann'))
+  .pipe(gulp.dest('../$name-rossmann'))
 });
 
 gulp.task('sass', function(){
   gulp.src('src/sass/*.scss')
   .pipe(sass().on ('error', sass.logError))
-  .pipe(gulp.dest('Portals/0/rich-content/$nazwa/css'))
-  .pipe(gulp.dest('../$nazwa-rossmann/Portals/0/rich-content/$nazwa/css'))
+  .pipe(gulp.dest('Portals/0/rich-content/$name/css'))
+  .pipe(gulp.dest('../$name-rossmann/Portals/0/rich-content/$name/css'))
 });
 
 gulp.task('uglify', function(){
   gulp.src('src/js/*.js')
-  .pipe(gulp.dest('Portals/0/rich-content/$nazwa/js'))
-  .pipe(gulp.dest('../$nazwa-rossmann/Portals/0/rich-content/$nazwa/js'))
+  .pipe(gulp.dest('Portals/0/rich-content/$name/js'))
+  .pipe(gulp.dest('../$name-rossmann/Portals/0/rich-content/$name/js'))
 });
 
 gulp.task('message',function(){
@@ -339,7 +339,7 @@ EOF
 
 
 #instaluj gulpa
-cd $nazwa/$now$nazwa/$nazwa-test
+cd $name/$now$name/$name-test
 npm init
 npm install --save -dev gulp
 npm install --save -dev gulp-watch
@@ -347,4 +347,4 @@ npm install --save -dev gulp-sass
 npm install --save -dev gulp-uglify
 npm install --save -dev gulp-imagemin
 
-echo "Skończyłem. Foldery rich-content o nazie $nazwa zostały przygotowane"
+echo "Finised. $name rich-content files structure is ready"
