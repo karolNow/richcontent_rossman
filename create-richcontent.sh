@@ -1,5 +1,5 @@
 now="$(date +'%Y-%m-%d-')"
-echo "Hi this little code help creates file structure for rich-content module development for Rossman pages. It installs, npm, Sass, Gulp and also creates basic .html .gulpfile.js and sass structure."
+echo "Hi this little code help creates file structure for rich-content module development for Rossman pages."
 echo -n "Write name of project"
 read name
 echo "I'm creating: $name"
