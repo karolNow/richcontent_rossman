@@ -1,121 +1,69 @@
-now="$(date +'%Y-%m-%d-')"
-echo "Hi this little code help creates file structure for rich-content module development for Rossman pages."
-echo -n "Write name of project"
-read name
-echo "I'm creating: $name"
+gigit lonow="$(date +'%Y-%m-%d-')"
+echo "Cześć program słuzy do tworzenia struktury plików rich-content"
+echo -n "Podaj nazwę folderu "
+read nazwa
+echo "Tworze plik o nazwie : $nazwa"
 
 
-#stwórz folder scr i test
-mkdir -p $name/$now$name/$name-test/src/{js,sass,img}
-cat >  $name/$now$name/$name-test/src/index.html <<EOF
-<!-- $name - Richcontent START -->
+#stwórz folder scr i test oraz js
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/{js,sass,img}
 
-<p>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
-  <link rel="stylesheet" href="Portals/0/rich-content/$name/css/styles.css">
-</p>
+cat >  $nazwa/$now$nazwa/$nazwa-app/src/js/app.js <<EOF
+import main from './main.js';
+main();
+EOF
 
-  <div class="rc-$name container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+cat >  $nazwa/$now$nazwa/$nazwa-app/src/js/main.js <<EOF
+import '../sass/styles.scss';
 
-    <!-- HEADER -->
-    <section class="rc-$name-header row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="rc-$name-logo row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$name/img/..." alt="$name-logo">
-      </div>
-      <div class="rc-$name-heroimg row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$name/img/..." alt="$name-second-logo">
-      </div>
-      <div class="rc-$name-products row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <img src="Portals/0/rich-content/$name/img/..." alt="$name-all-products">
-        <h2></h2>
-        <p></p>
-      </div>
-      <div class="rc-$name-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3></h3>
-        <p></p>
-        <img src="Portals/0/rich-content/$name/img/..." alt="$name-im-products">
-        <p></p>
-        <ul>
-          <li><p></p></li>
-          <li><p></p></li>
-          <li><p></p></li>
-        </ul>
-      </div>
+export default () => {
+    const done = "i did it"
+    console.log(done)
+    
+}
+EOF
+
+
+cat >  $nazwa/$now$nazwa/$nazwa-app/index.html <<EOF
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>$nazwa richcontent</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.css">
+</head>
+<body>
+<div class="grd-$nazwa-richcontent">
+    <section>
+      <h1>richcontent</h1>
     </section>
-
-    <!-- PRODUKTS-LIST -->
-
-    <section class="rc-$name-product-list row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <!-- PRODUKT 1 -->
-      <div class="rc-$name-product01 row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div class="rc-$name-packshoot-hero row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <img src="Portals/0/rich-content/$name/img/..." alt="">
-        </div>
-        <div class="rc-$name-packshoot row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <img src="Portals/0/rich-content/$name/img/..." alt="">
-        </div>
-        <div class="rc-$name-button row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <a href="#"></a>
-        </div>
-        <div class="rc-$name-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h3></h3>
-          <p></p>
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PRODUKTS-LIST-TEKST -->
-      <div class="rc-$name-pl-text row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <p></p>
-      </div>
-
+    <section>
+      <h1>richcontent</h1>
     </section>
-
-    <!-- FOOTER -->
-    <section class="rc-$name-footer row col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-      <div class="rc-$name-footer-hero-img row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="Portals/0/rich-content/$name/img/..." alt="">
-      </div>
-      <div class="rc-$name-footer-hero-text row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2><span></span></h2>
-      </div>
-
-      <!-- footer-produkty -->
-      <div class="rc-$name-footer-hero-products row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <!-- f-produkt-01 -->
-        <div class="rc-$name-f-product-01 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h3></h3>
-          <p></p>
-          <img src="Portals/0/rich-content/$name/img/..." alt="">
-        </div>
-        <!-- f-produkt-02 -->
-        <div class="rc-$name-f-product-02 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h3></h3>
-          <p></p>
-          <img src="Portals/0/rich-content/$name/img/..." alt="">
-        </div>
-        <!-- f-produkt-03 -->
-        <div class="rc-$name-f-product-03 row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h3></h3>
-          <p></p>
-          <img src="Portals/0/rich-content/$name/img/..." alt="">
-        </div>
-
-      </div>
+    <section>
+      <h1>richcontent</h1>
+    </section>
+    <section>
+      <h1>richcontent</h1>
+    </section>
+    <section>
+      <h1>richcontent</h1>
     </section>
   </div>
+</body>
+</html>
 
-<!-- $name - Richcontent END -->
 EOF
 
 #Sass i podfoldery sassa
-mkdir -p $name/$now$name/$name-test/src/sass/components/{body,mobile,small,medium,large} | touch $name/$now$name/$name-test/src/sass/components/{body,mobile,small,medium,large}/{animations,video,shapes,buttons,fonts,header,product,products,footer,footer-products}.scss
-mkdir -p $name/$now$name/$name-test/src/sass/media | touch $name/$now$name/$name-test/src/sass/media/{mobile,small,medium,large}.scss
-mkdir -p $name/$now$name/$name-test/src/sass/main | touch $name/$now$name/$name-test/src/sass/main/{variables,mixins,body}.scss
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large} | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large}/{animations,video,shapes,buttons,fonts,header,product,products,footer,footer-products}.scss
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/media | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/media/{mobile,small,medium,large}.scss
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/main | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/main/{variables,mixins,body}.scss
 
-cat > $name/$now$name/$name-test/src/sass/main/body.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/fonts.scss";
 @import "src/sass/components/body/animations.scss";
 @import "src/sass/components/body/buttons.scss";
@@ -128,7 +76,7 @@ cat > $name/$now$name/$name-test/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/footer.scss";
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/media/large.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
 @include large{
 @import "src/sass/components/large/fonts.scss";
 @import "src/sass/components/large/animations.scss";
@@ -143,7 +91,7 @@ cat > $name/$now$name/$name-test/src/sass/media/large.scss <<\EOF
 }
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/media/medium.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/medium.scss <<\EOF
 @include medium{
 @import "src/sass/components/medium/fonts.scss";
 @import "src/sass/components/medium/animations.scss";
@@ -158,7 +106,7 @@ cat > $name/$now$name/$name-test/src/sass/media/medium.scss <<\EOF
 }
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/media/small.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/small.scss <<\EOF
 @include small{
 @import "src/sass/components/small/fonts.scss";
 @import "src/sass/components/small/animations.scss";
@@ -173,7 +121,7 @@ cat > $name/$now$name/$name-test/src/sass/media/small.scss <<\EOF
 }
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/media/mobile.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/mobile.scss <<\EOF
 @include mobile{
 @import "src/sass/components/mobile/fonts.scss";
 @import "src/sass/components/mobile/animations.scss";
@@ -188,7 +136,7 @@ cat > $name/$now$name/$name-test/src/sass/media/mobile.scss <<\EOF
 }
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/main/variables.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/variables.scss <<\EOF
 $kolor0: #000;
 $kolor1: green;
 $kolor2: red;
@@ -235,7 +183,7 @@ $lg-li :16px;
 
 EOF
 
-cat > $name/$now$name/$name-test/src/sass/main/mixins.scss <<\EOF
+cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/mixins.scss <<\EOF
 @mixin text-reset(){
   margin-left: 0px;
   margin-right: 0px;
@@ -270,7 +218,7 @@ cat > $name/$now$name/$name-test/src/sass/main/mixins.scss <<\EOF
 EOF
 
 
-cat >  $name/$now$name/$name-test/src/sass/styles.scss <<\EOF
+cat >  $nazwa/$now$nazwa/$nazwa-app/src/sass/styles.scss <<\EOF
 @import "main/variables.scss";
 @import "main/mixins.scss";
 @import "main/body.scss";
@@ -284,67 +232,144 @@ EOF
 
 
 #pozostałe foldery
-mkdir -p $name/$now$name/$name-rossmann
-mkdir -p $name/$now$name/$name-materiały
-mkdir -p $name/$now$name/$name-wydane
+mkdir -p $nazwa/$now$nazwa/$nazwa-materiały
+mkdir -p $nazwa/$now$nazwa/$nazwa-wydane
 
-#stwórz plik gulpa
-cat > $name/$now$name/$name-test/gulpfile.js <<EOF
-
-var gulp = require('gulp');
-var directories = require('gulp')
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var watch = require('gulp-watch');
-const imagemin = require('gulp-imagemin');
-
-gulp.task('imagemin', function(){
-    gulp.src('src/img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('Portals/0/rich-content/$name/img'))
-        .pipe(gulp.dest('../smectaGo-rossmann/Portals/0/rich-content/$name/img'))
-      });
-
-gulp.task('copyHtml', function(){
-  gulp.src('src/*.html')
-  .pipe(gulp.dest('../$name-rossmann'))
-});
-
-gulp.task('sass', function(){
-  gulp.src('src/sass/*.scss')
-  .pipe(sass().on ('error', sass.logError))
-  .pipe(gulp.dest('Portals/0/rich-content/$name/css'))
-  .pipe(gulp.dest('../$name-rossmann/Portals/0/rich-content/$name/css'))
-});
-
-gulp.task('uglify', function(){
-  gulp.src('src/js/*.js')
-  .pipe(gulp.dest('Portals/0/rich-content/$name/js'))
-  .pipe(gulp.dest('../$name-rossmann/Portals/0/rich-content/$name/js'))
-});
-
-gulp.task('message',function(){
-  return console.log('poszło');
-});
-
-gulp.task ('default', [ 'uglify', 'sass', 'copyHtml','message'])
-
-gulp.task('watch', function(){
-  gulp.watch('src/sass/*.scss',['sass']);
-  gulp.watch('src/js/*.js',['uglify']);
-  gulp.watch('src/*.html',['copyHtml']);
-});
+#stwórz plik pkg-jason
+cat > $nazwa/$now$nazwa/$nazwa-app/package.json <<EOF
+{
+  "name": "$nazwa-rossmann-webpackapp",
+  "version": "1.0.0",
+  "description": "rossman on webpack",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --env.NODE_ENV=production -p",
+    "dev": "webpack-dev-server  --env.NODE_ENV=development"
+  },
+  "author": "kaNow",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  }
+}
 
 EOF
 
+#stwórz plik webpacka
+cat > $nazwa/$now$nazwa/$nazwa-app/webpack.config.js <<EOF
 
-#instaluj gulpa
-cd $name/$now$name/$name-test
-npm init
-npm install --save -dev gulp
-npm install --save -dev gulp-watch
-npm install --save -dev gulp-sass
-npm install --save -dev gulp-uglify
-npm install --save -dev gulp-imagemin
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-echo "Finised. $name rich-content files structure is ready"
+
+module.exports = env => {
+    const mode = env.NODE_ENV;
+    const devMode = mode !== 'production';
+    return {
+        mode: mode,
+        entry: './src/js/app.js',
+        output: {
+            path: path.resolve(__dirname + '/dist'),
+            filename: 'js/boundle.js',
+            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+        },
+        plugins: [
+            new HTMLWebpackPlugin({
+                filename: 'index.html',
+                template: './index.html'
+            }),
+            new MiniCssExtractPlugin({
+                filename: "css/main.css"
+            }),
+            new CleanWebpackPlugin(['dist']),
+        ],
+        module: {
+            rules: [{
+                    test: /\.js$/,
+                    use: [{
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                        }
+                    }]
+                },
+                {
+                    test: /\.scss$/,
+                    use: [{
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+                            }
+                        },
+                        'css-loader',
+                        'sass-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                parser: 'postcss-scss'
+                            }
+                        }
+                    ],
+                },
+                {
+                    test: /\.html$/,
+                    use: {
+                        loader: 'html-loader',
+                    }
+                },
+                {
+                    test: /\.(png|jpg|gif)$/,
+                    use: [{
+                        loader: "file-loader",
+                        options: {
+                            name: 'img/[name].[ext]',
+                            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+                        },
+                    }]
+                },
+
+            ]
+        }
+    }
+}
+
+EOF
+
+#stwórz plik gitignore
+cat > $nazwa/$now$nazwa/$nazwa-app/.gitignore <<EOF
+node_modules
+dist
+EOF
+
+
+#instaluj 
+
+echo "Instaluje moduły noda może chwile potrwać ..."
+cd $nazwa/$now$nazwa/$nazwa-app
+npm install
+
+echo "inicjalizuje gita"
+git init
+
+echo "Skończyłem. Foldery rich-content o nazie $nazwa zostały przygotowane"
