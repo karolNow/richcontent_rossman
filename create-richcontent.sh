@@ -1,4 +1,4 @@
-gigit lonow="$(date +'%Y-%m-%d-')"
+now="$(date +'%Y-%m-%d-')"
 echo "Cześć program słuzy do tworzenia struktury plików rich-content"
 echo -n "Podaj nazwę folderu "
 read nazwa
@@ -244,6 +244,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/package.json <<EOF
   "main": "app.js",
   "scripts": {
     "build": "webpack --env.NODE_ENV=production -p",
+    "view": "webpack --env.NODE_ENV=development",
     "dev": "webpack-dev-server  --env.NODE_ENV=development"
   },
   "author": "kaNow",
@@ -290,7 +291,7 @@ module.exports = env => {
         mode: mode,
         entry: './src/js/app.js',
         output: {
-            path: path.resolve(__dirname + '/dist'),
+            path: path.resolve(__dirname + '/dist-$nazwa'),
             filename: 'js/boundle.js',
             publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
         },
@@ -302,7 +303,7 @@ module.exports = env => {
             new MiniCssExtractPlugin({
                 filename: "css/main.css"
             }),
-            new CleanWebpackPlugin(['dist']),
+            new CleanWebpackPlugin(['dist-$nazwa']),
         ],
         module: {
             rules: [{
@@ -373,3 +374,4 @@ echo "inicjalizuje gita"
 git init
 
 echo "Skończyłem. Foldery rich-content o nazie $nazwa zostały przygotowane"
+code .
