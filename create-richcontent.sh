@@ -3,6 +3,8 @@ echo "Cześć program słuzy do tworzenia struktury plików rich-content"
 echo -n "Podaj nazwę folderu "
 read nazwa
 echo "Tworze plik o nazwie : $nazwa"
+echo -n "Podaj nazwę/kod produktu potrzebnego do katalogów rossmanna"
+read produkt
 
 
 #stwórz folder scr i test oraz js
@@ -59,9 +61,9 @@ cat >  $nazwa/$now$nazwa/$nazwa-app/index.html <<EOF
 EOF
 
 #Sass i podfoldery sassa
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large} | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large}/{animations,video,shapes,buttons,fonts,header,product,products,footer,footer-products}.scss
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large} | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large}/{fonts,animations,buttons,header,video,product,footer,sec1,sec2,sec3,sec4,sec5}.scss
 mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/media | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/media/{mobile,small,medium,large}.scss
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/main | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/main/{variables,mixins,body}.scss
+mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/main | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/main/{variables,mixins,body,global}.scss
 
 cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/fonts.scss";
@@ -69,11 +71,13 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/buttons.scss";
 @import "src/sass/components/body/header.scss";
 @import "src/sass/components/body/video.scss";
-@import "src/sass/components/body/shapes.scss";
-@import "src/sass/components/body/products.scss";
 @import "src/sass/components/body/product.scss";
-@import "src/sass/components/body/footer-products.scss";
 @import "src/sass/components/body/footer.scss";
+@import "src/sass/components/body/sec1.scss";
+@import "src/sass/components/body/sec2.scss";
+@import "src/sass/components/body/sec3.scss";
+@import "src/sass/components/body/sec4.scss";
+@import "src/sass/components/body/sec5.scss";
 EOF
 
 cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
@@ -83,11 +87,13 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
 @import "src/sass/components/large/buttons.scss";
 @import "src/sass/components/large/header.scss";
 @import "src/sass/components/large/video.scss";
-@import "src/sass/components/large/shapes.scss";
-@import "src/sass/components/large/products.scss";
 @import "src/sass/components/large/product.scss";
-@import "src/sass/components/large/footer-products.scss";
 @import "src/sass/components/large/footer.scss";
+@import "src/sass/components/large/sec1.scss";
+@import "src/sass/components/large/sec2.scss";
+@import "src/sass/components/large/sec3.scss";
+@import "src/sass/components/large/sec4.scss";
+@import "src/sass/components/large/sec5.scss";
 }
 EOF
 
@@ -98,11 +104,13 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/medium.scss <<\EOF
 @import "src/sass/components/medium/buttons.scss";
 @import "src/sass/components/medium/header.scss";
 @import "src/sass/components/medium/video.scss";
-@import "src/sass/components/medium/shapes.scss";
-@import "src/sass/components/medium/products.scss";
 @import "src/sass/components/medium/product.scss";
-@import "src/sass/components/medium/footer-products.scss";
 @import "src/sass/components/medium/footer.scss";
+@import "src/sass/components/medium/sec1.scss";
+@import "src/sass/components/medium/sec2.scss";
+@import "src/sass/components/medium/sec3.scss";
+@import "src/sass/components/medium/sec4.scss";
+@import "src/sass/components/medium/sec5.scss";
 }
 EOF
 
@@ -113,11 +121,13 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/small.scss <<\EOF
 @import "src/sass/components/small/buttons.scss";
 @import "src/sass/components/small/header.scss";
 @import "src/sass/components/small/video.scss";
-@import "src/sass/components/small/shapes.scss";
-@import "src/sass/components/small/products.scss";
 @import "src/sass/components/small/product.scss";
-@import "src/sass/components/small/footer-products.scss";
 @import "src/sass/components/small/footer.scss";
+@import "src/sass/components/small/sec1.scss";
+@import "src/sass/components/small/sec2.scss";
+@import "src/sass/components/small/sec3.scss";
+@import "src/sass/components/small/sec4.scss";
+@import "src/sass/components/small/sec5.scss";
 }
 EOF
 
@@ -128,11 +138,13 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/mobile.scss <<\EOF
 @import "src/sass/components/mobile/buttons.scss";
 @import "src/sass/components/mobile/header.scss";
 @import "src/sass/components/mobile/video.scss";
-@import "src/sass/components/mobile/shapes.scss";
-@import "src/sass/components/mobile/products.scss";
 @import "src/sass/components/mobile/product.scss";
-@import "src/sass/components/mobile/footer-products.scss";
 @import "src/sass/components/mobile/footer.scss";
+@import "src/sass/components/mobile/sec1.scss";
+@import "src/sass/components/mobile/sec2.scss";
+@import "src/sass/components/mobile/sec3.scss";
+@import "src/sass/components/mobile/sec4.scss";
+@import "src/sass/components/mobile/sec5.scss";
 }
 EOF
 
@@ -293,7 +305,7 @@ module.exports = env => {
         output: {
             path: path.resolve(__dirname + '/dist-$nazwa'),
             filename: 'js/boundle.js',
-            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/$produkt'
         },
         plugins: [
             new HTMLWebpackPlugin({
@@ -320,7 +332,7 @@ module.exports = env => {
                     use: [{
                             loader: MiniCssExtractPlugin.loader,
                             options: {
-                                publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+                                publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/$produkt'
                             }
                         },
                         'css-loader',
@@ -345,7 +357,7 @@ module.exports = env => {
                         loader: "file-loader",
                         options: {
                             name: 'img/[name].[ext]',
-                            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/noble-health/class-a-colagen'
+                            publicPath: devMode ? '' : 'https://www.ros.net.pl/Portals/0/rich-content/$produkt'
                         },
                     }]
                 },
@@ -373,5 +385,5 @@ npm install
 echo "inicjalizuje gita"
 git init
 
-echo "Skończyłem. Foldery rich-content o nazie $nazwa zostały przygotowane"
+echo "Skończyłem. Foldery rich-content o nazie $nazwa - $produkt zostały przygotowane"
 code .
