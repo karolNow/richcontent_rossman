@@ -8,14 +8,14 @@ read produkt
 
 
 #stwórz folder scr i test oraz js
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/{js,sass,img}
+mkdir -p $now$nazwa/$nazwa-app/src/{js,sass,img}
 
-cat >  $nazwa/$now$nazwa/$nazwa-app/src/js/app.js <<EOF
+cat >  $now$nazwa/$nazwa-app/src/js/app.js <<EOF
 import main from './main.js';
 main();
 EOF
 
-cat >  $nazwa/$now$nazwa/$nazwa-app/src/js/main.js <<EOF
+cat >  $now$nazwa/$nazwa-app/src/js/main.js <<EOF
 import '../sass/styles.scss';
 
 export default () => {
@@ -26,7 +26,7 @@ export default () => {
 EOF
 
 
-cat >  $nazwa/$now$nazwa/$nazwa-app/index.html <<EOF
+cat >  $now$nazwa/$nazwa-app/index.html <<EOF
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -40,19 +40,19 @@ cat >  $nazwa/$now$nazwa/$nazwa-app/index.html <<EOF
 <body>
 <div class="grd-$nazwa-richcontent">
     <section>
-      <h1>richcontent</h1>
+      <h1>richcontent sec 1</h1>
     </section>
     <section>
-      <h1>richcontent</h1>
+      <h1>richcontent sec 2</h1>
     </section>
     <section>
-      <h1>richcontent</h1>
+      <h1>richcontent sec 3</h1>
     </section>
     <section>
-      <h1>richcontent</h1>
+      <h1>richcontent sec 4</h1>
     </section>
     <section>
-      <h1>richcontent</h1>
+      <h1>richcontent sec 5</h1>
     </section>
   </div>
 </body>
@@ -61,11 +61,11 @@ cat >  $nazwa/$now$nazwa/$nazwa-app/index.html <<EOF
 EOF
 
 #Sass i podfoldery sassa
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large} | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large}/{fonts,animations,buttons,header,video,product,footer,sec1,sec2,sec3,sec4,sec5}.scss
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/media | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/media/{mobile,small,medium,large}.scss
-mkdir -p $nazwa/$now$nazwa/$nazwa-app/src/sass/main | touch $nazwa/$now$nazwa/$nazwa-app/src/sass/main/{variables,mixins,body,global}.scss
+mkdir -p $now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large} | touch $now$nazwa/$nazwa-app/src/sass/components/{body,mobile,small,medium,large}/{fonts,animations,buttons,header,video,product,footer,sec1,sec2,sec3,sec4,sec5}.scss
+mkdir -p $now$nazwa/$nazwa-app/src/sass/media | touch $now$nazwa/$nazwa-app/src/sass/media/{mobile,small,medium,large}.scss
+mkdir -p $now$nazwa/$nazwa-app/src/sass/main | touch $now$nazwa/$nazwa-app/src/sass/main/{variables,mixins,body,global}.scss
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/fonts.scss";
 @import "src/sass/components/body/animations.scss";
 @import "src/sass/components/body/buttons.scss";
@@ -80,7 +80,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/body.scss <<\EOF
 @import "src/sass/components/body/sec5.scss";
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
 @include large{
 @import "src/sass/components/large/fonts.scss";
 @import "src/sass/components/large/animations.scss";
@@ -97,7 +97,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/large.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/medium.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/media/medium.scss <<\EOF
 @include medium{
 @import "src/sass/components/medium/fonts.scss";
 @import "src/sass/components/medium/animations.scss";
@@ -114,7 +114,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/medium.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/small.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/media/small.scss <<\EOF
 @include small{
 @import "src/sass/components/small/fonts.scss";
 @import "src/sass/components/small/animations.scss";
@@ -131,7 +131,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/small.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/mobile.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/media/mobile.scss <<\EOF
 @include mobile{
 @import "src/sass/components/mobile/fonts.scss";
 @import "src/sass/components/mobile/animations.scss";
@@ -148,7 +148,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/media/mobile.scss <<\EOF
 }
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/variables.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/main/variables.scss <<\EOF
 $kolor0: #000;
 $kolor1: green;
 $kolor2: red;
@@ -195,7 +195,7 @@ $lg-li :16px;
 
 EOF
 
-cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/mixins.scss <<\EOF
+cat > $now$nazwa/$nazwa-app/src/sass/main/mixins.scss <<\EOF
 @mixin text-reset(){
   margin-left: 0px;
   margin-right: 0px;
@@ -230,7 +230,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/src/sass/main/mixins.scss <<\EOF
 EOF
 
 
-cat >  $nazwa/$now$nazwa/$nazwa-app/src/sass/styles.scss <<\EOF
+cat >  $now$nazwa/$nazwa-app/src/sass/styles.scss <<\EOF
 @import "main/variables.scss";
 @import "main/mixins.scss";
 @import "main/body.scss";
@@ -244,11 +244,11 @@ EOF
 
 
 #pozostałe foldery
-mkdir -p $nazwa/$now$nazwa/$nazwa-materiały
-mkdir -p $nazwa/$now$nazwa/$nazwa-wydane
+mkdir -p $now$nazwa/$nazwa-materiały
+mkdir -p $now$nazwa/$nazwa-wydane
 
 #stwórz plik pkg-jason
-cat > $nazwa/$now$nazwa/$nazwa-app/package.json <<EOF
+cat > $now$nazwa/$nazwa-app/package.json <<EOF
 {
   "name": "$nazwa-rossmann-webpackapp",
   "version": "1.0.0",
@@ -288,7 +288,7 @@ cat > $nazwa/$now$nazwa/$nazwa-app/package.json <<EOF
 EOF
 
 #stwórz plik webpacka
-cat > $nazwa/$now$nazwa/$nazwa-app/webpack.config.js <<EOF
+cat > $now$nazwa/$nazwa-app/webpack.config.js <<EOF
 
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -370,7 +370,7 @@ module.exports = env => {
 EOF
 
 #stwórz plik gitignore
-cat > $nazwa/$now$nazwa/$nazwa-app/.gitignore <<EOF
+cat > $now$nazwa/$nazwa-app/.gitignore <<EOF
 node_modules
 dist
 EOF
@@ -379,7 +379,7 @@ EOF
 #instaluj 
 
 echo "Instaluje moduły noda może chwile potrwać ..."
-cd $nazwa/$now$nazwa/$nazwa-app
+cd $now$nazwa/$nazwa-app
 npm install
 
 echo "inicjalizuje gita"
